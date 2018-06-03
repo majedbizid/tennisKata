@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * TennisGameManagement is the controller that exposes REST API
- * to manage a Tennis Game
+ * to manage a tennis Game
  *
  * @author mbizid
  */

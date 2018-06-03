@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * TennisGamePlay is the controller that exposes service
- * to win points in a Tennis Game
+ * to win points in a tennis Game
  *
  * @author mbizid
  */

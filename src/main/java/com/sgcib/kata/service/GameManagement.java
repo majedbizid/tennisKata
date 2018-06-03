@@ -15,6 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class GameManagement {
 
+    /**
+     * get player score from score table
+     *
+     * @param playerName
+     * @return int score
+     */
     public int getScore(final String playerName) {
         return PlayersCache.getPlayersCache().stream()
                 .filter(player -> player.getPlayerName().equals(playerName))
@@ -22,6 +28,11 @@ public class GameManagement {
 
     }
 
+    /**
+     * get winner player name
+     *
+     * @return String name of the player
+     */
     public String getWinner() {
         for (Player player : PlayersCache.getPlayersCache()) {
             if (player.isGameWinner()) {
@@ -31,12 +42,20 @@ public class GameManagement {
         return null;
     }
 
+    /**
+     * get tennis game player names
+     *
+     * @return List of player names
+     */
     public List<String> getPlayerNames() {
         return PlayersCache.getPlayersCache().stream()
                 .map(player -> player.getPlayerName())
                 .collect(Collectors.toList());
     }
 
+    /**
+     * init score table
+     */
     public void initGame() {
         PlayersCache.getPlayersCache().forEach(p -> {
                     p.setGameWinner(false);
@@ -50,6 +69,11 @@ public class GameManagement {
         ScoreTable.getScoreTable().replaceAll((k, v) -> v = 0);
     }
 
+    /**
+     * get match score table
+     *
+     * @return Map of score per player
+     */
     public Map<String, Integer> getMatchScore() {
         return ScoreTable.getScoreTable();
     }

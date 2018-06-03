@@ -19,6 +19,7 @@ public class GamePlay {
 
     /**
      * This method take winner point player name as argument and launch score updates
+     *
      * @param player
      */
     public void winPoint(final String player) {
@@ -40,6 +41,7 @@ public class GamePlay {
     /**
      * this method will verify if some rules as activated as tiebreak rule or deuce rule
      * before launch score computations
+     *
      * @param winPointPlayer
      * @param opposedPlayer
      */
@@ -61,6 +63,7 @@ public class GamePlay {
 
     /**
      * test deuce rule
+     *
      * @param winnerPointPlayer
      * @param opposedPlayer
      */
@@ -74,6 +77,7 @@ public class GamePlay {
 
     /**
      * compute game score
+     *
      * @param winnerPointPlayer
      * @param opposedPlayer
      */
@@ -97,6 +101,7 @@ public class GamePlay {
 
     /**
      * declare winner and initialize score
+     *
      * @param winnerPointPlayer
      * @param opposedPlayer
      */
@@ -114,6 +119,7 @@ public class GamePlay {
 
     /**
      * compute score when deuce rule was activated and then declare winner
+     *
      * @param winnerPointPlayer
      * @param opposedPlayer
      */
@@ -138,6 +144,7 @@ public class GamePlay {
 
     /**
      * test if deuce rule is activated
+     *
      * @return boolean
      */
     private boolean isDeuceRuleActivated() {
@@ -152,6 +159,7 @@ public class GamePlay {
 
     /**
      * manage score table of the tennis match
+     *
      * @param gameWinnerPlayer
      * @param opposedPlayer
      */
@@ -175,6 +183,7 @@ public class GamePlay {
 
     /**
      * test if tiebreak rule is activated
+     *
      * @param gameWinnerPlayer
      * @param opposedPlayer
      * @return
@@ -189,6 +198,7 @@ public class GamePlay {
 
     /**
      * compute score when tiebreak was activated and update score table
+     *
      * @param winnerPointPlayer
      * @param opposedPlayer
      */
