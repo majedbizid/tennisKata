@@ -1,4 +1,4 @@
-package com.sgcib.kata.controller;
+package com.sgcib.kata.service;
 
 import com.sgcib.kata.TennisGameBootApplication;
 import com.sgcib.kata.model.Player;
@@ -17,19 +17,19 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class GamePlayTest {
 
     @Autowired
-    TennisGamePlay game;
+    GamePlay game;
     @Autowired
-    TennisGameManagement gameManagement;
+    GameManagement gameManagement;
 
     @Before
-    public void initGame(){
+    public void initGame() {
         gameManagement.initGame();
     }
 
     // Sprint 1
     //UserStory1
     @Test
-    public void verify_players_win_points() {
+    public void verify_player_win_points() {
         //given
 
         //Player player1 = new Player("player1",0,false);
@@ -49,7 +49,7 @@ public class GamePlayTest {
     }
 
     @Test
-    public void end_of_game_p1_win_game_score_initialized() {
+    public void end_of_game_p1_win_and_game_score_initialized() {
         //given
         //Player player1 = new Player("player1",0,false);
         Player player1 = PlayersCache.getPlayersCache().get(0);
@@ -67,7 +67,7 @@ public class GamePlayTest {
         //given
         //Player player1 = new Player("player1",0,false);
         Player player1 = PlayersCache.getPlayersCache().get(0);
-        Player player2 = PlayersCache.getPlayersCache().get(0);
+        Player player2 = PlayersCache.getPlayersCache().get(1);
 
         //when
         game.winPoint("player1");
@@ -84,7 +84,7 @@ public class GamePlayTest {
 
     // Story2 tests
     @Test
-    public void verify_score_when_deuce_rule_activated_p1_win() {
+    public void verify_score_when_deuce_rule_activated_and_p1_win() {
         //given
         Player player1 = PlayersCache.getPlayersCache().get(0);
         Player player2 = PlayersCache.getPlayersCache().get(1);
@@ -114,7 +114,7 @@ public class GamePlayTest {
     }
 
     @Test
-    public void verify_score_when_deuce_rule_activated_p2_win() {
+    public void verify_score_when_deuce_rule_activated_and_p2_win() {
         //given
         Player player1 = PlayersCache.getPlayersCache().get(0);
         Player player2 = PlayersCache.getPlayersCache().get(1);
@@ -149,7 +149,7 @@ public class GamePlayTest {
     // UserStory 1
 
     @Test
-    public void verify_score_table_incrementation(){
+    public void verify_score_table_incrementation() {
         //given
         Player player1 = PlayersCache.getPlayersCache().get(0);
         //Player player2 = PlayersCache.getPlayersCache().get(1);
@@ -169,7 +169,7 @@ public class GamePlayTest {
     }
 
     @Test
-    public void verify_score_table_and_winner_player(){
+    public void verify_score_table_and_winner_player() {
 
         //given
         Player player1 = PlayersCache.getPlayersCache().get(0);
@@ -253,13 +253,13 @@ public class GamePlayTest {
     // Sprint2
     // UserStory 2
     @Test
-    public void verify_tibreak_rule_activated_p1_win(){
+    public void verify_tiebreak_rule_activated_and_p1_win() {
 
         Player player1 = PlayersCache.getPlayersCache().get(0);
         Player player2 = PlayersCache.getPlayersCache().get(1);
 
-        ScoreTable.getScoreTable().put("player1",6);
-        ScoreTable.getScoreTable().put("player2",6);
+        ScoreTable.getScoreTable().put("player1", 6);
+        ScoreTable.getScoreTable().put("player2", 6);
 
         game.winPoint("player1"); //p1 = 1
         game.winPoint("player1"); //p1 = 2
@@ -279,13 +279,13 @@ public class GamePlayTest {
 
 
     @Test
-    public void verify_tibreak_rule_activated(){
+    public void verify_tiebreak_rule_activated() {
 
         Player player1 = PlayersCache.getPlayersCache().get(0);
         Player player2 = PlayersCache.getPlayersCache().get(1);
 
-        ScoreTable.getScoreTable().put("player1",6);
-        ScoreTable.getScoreTable().put("player2",6);
+        ScoreTable.getScoreTable().put("player1", 6);
+        ScoreTable.getScoreTable().put("player2", 6);
 
         game.winPoint("player1"); //p1 = 1
         game.winPoint("player1"); //p1 = 2

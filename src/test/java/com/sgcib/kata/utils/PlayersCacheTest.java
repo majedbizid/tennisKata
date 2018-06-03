@@ -9,10 +9,11 @@ import java.util.List;
 public class PlayersCacheTest {
     @Test
     public void verify_players_cache_singleton() {
-        List<Player> playersCache1 = PlayersCache.getPlayersCache();
-        List<Player> playersCache2 = PlayersCache.getPlayersCache();
-        Assert.assertNotNull(playersCache1);
-        Assert.assertNotNull(playersCache2);
-        Assert.assertEquals(playersCache1, playersCache2);
+        //verify Cache
+        List<Player> firstCacheCall = PlayersCache.getPlayersCache();
+        List<Player> secondCacheCall = PlayersCache.getPlayersCache();
+        Assert.assertNotNull(firstCacheCall);
+        Assert.assertNotNull(secondCacheCall);
+        Assert.assertEquals(firstCacheCall, secondCacheCall);
     }
 }

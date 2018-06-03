@@ -1,4 +1,4 @@
-package com.sgcib.kata.controller;
+package com.sgcib.kata.service;
 
 import com.sgcib.kata.TennisGameBootApplication;
 import com.sgcib.kata.utils.PlayersCache;
@@ -12,10 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TennisGameBootApplication.class)
-public class GamePlayManagementTest {
+public class GameManagementTest {
 
     @Autowired
-    TennisGameManagement tennisGameManagement;
+    GameManagement tennisGameManagement;
 
     @Before
     public void initGame() {
@@ -60,9 +60,9 @@ public class GamePlayManagementTest {
         //Player player1 = new Player("player1",30,false);
         //Player player2 = new Player("player2",40,false);
 
-        Assert.assertEquals(tennisGameManagement.getPlayers().stream().count(), 2);
-        Assert.assertEquals(tennisGameManagement.getPlayers().get(0), "player1");
-        Assert.assertEquals(tennisGameManagement.getPlayers().get(1), "player2");
+        Assert.assertEquals(tennisGameManagement.getPlayerNames().stream().count(), 2);
+        Assert.assertEquals(tennisGameManagement.getPlayerNames().get(0), "player1");
+        Assert.assertEquals(tennisGameManagement.getPlayerNames().get(1), "player2");
     }
 
 }
